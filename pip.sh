@@ -6,7 +6,7 @@ ED_TITLE="Elite - Dangerous"
 
 is_ed_active() {
     ## uncomment the next line for debugging
-    return 0
+    # return 0
 
     kdotool getactivewindow getwindowname 2>/dev/null | grep -q "$ED_TITLE"
 }
