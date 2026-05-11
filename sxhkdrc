@@ -1,0 +1,25 @@
+# Elite Dangerous PIP management
+
+F1
+    $MACROS_DIR/pip.sh dodge
+
+ctrl + F1
+    $MACROS_DIR/pip.sh flee
+
+F2
+    $MACROS_DIR/pip.sh combat
+
+ctrl + F2
+    $MACROS_DIR/pip.sh combat2
+
+F3
+    $MACROS_DIR/pip.sh pursuit
+
+ctrl + F3
+    $MACROS_DIR/pip.sh offense
+
+F4
+    $MACROS_DIR/pip.sh shields
+
+ctrl + F4
+    $MACROS_DIR/pip.sh defense

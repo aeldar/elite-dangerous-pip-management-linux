@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+export MACROS_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+pkill -f "sxhkd.*sxhkdrc" 2>/dev/null
+pkill ydotoold 2>/dev/null
+
+echo "ED PIP Manager started from $MACROS_DIR"
+echo "Press Ctrl+C to stop."
+
+nix-shell -p sxhkd ydotool kdotool --run "
+    ydotoold &
+    YDOTOOLD_PID=\$!
+    sleep 0.5
+    sxhkd -c '$MACROS_DIR/sxhkdrc'
+    kill \$YDOTOOLD_PID
+"
