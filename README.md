@@ -37,6 +37,7 @@ Press **Ctrl+C** to stop. On first run, `nix-shell` will download `sxhkd` and `x
 
 - [sxhkd](https://github.com/baskerville/sxhkd) — hotkey daemon
 - [xdotool](https://github.com/jordansissel/xdotool) — key injection and active window detection
+- [pipewire](https://pipewire.org/) — audio playback (`pw-play`)
 
 ## License
 
