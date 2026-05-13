@@ -7,6 +7,6 @@ pkill -f "sxhkd.*sxhkdrc" 2>/dev/null
 echo "ED PIP Manager started from $MACROS_DIR"
 echo "Press Ctrl+C to stop."
 
-nix-shell -p sxhkd xdotool kdotool --run "
+nix-shell -p sxhkd xdotool --run "
     sxhkd -c '$MACROS_DIR/sxhkdrc'
 "

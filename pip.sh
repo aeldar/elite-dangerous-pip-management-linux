@@ -8,7 +8,7 @@ is_ed_active() {
     ## uncomment the next line for debugging
     # return 0
 
-    kdotool getactivewindow getwindowname 2>/dev/null | grep -q "$ED_TITLE"
+    xdotool getactivewindow getwindowname 2>/dev/null | grep -q "$ED_TITLE"
 }
 
 PRESS_SEC=0.050

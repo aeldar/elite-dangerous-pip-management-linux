@@ -5,9 +5,8 @@ Keyboard macros for quick power distribution (PIP) presets in Elite Dangerous, w
 ## Requirements
 
 - NixOS (uses `nix-shell` to pull dependencies)
-- KDE Plasma on Wayland
+- Wayland compositor with XWayland support (tested on KDE Plasma)
 - Elite Dangerous running via Steam/Proton (XWayland)
-- User must be in the **`input`** group (for sxhkd to capture hotkeys via XWayland)
 
 ## Usage
 
@@ -15,7 +14,7 @@ Keyboard macros for quick power distribution (PIP) presets in Elite Dangerous, w
 ./ed-pip-manager
 ```
 
-Press **Ctrl+C** to stop. On first run, `nix-shell` will download `sxhkd`, `xdotool`, and `kdotool`.
+Press **Ctrl+C** to stop. On first run, `nix-shell` will download `sxhkd` and `xdotool`.
 
 ## Hotkeys
 
@@ -30,8 +29,15 @@ Press **Ctrl+C** to stop. On first run, `nix-shell` will download `sxhkd`, `xdot
 | F4         | Shields  | 4 / 2 / —           |
 | Ctrl+F4    | Defense  | 4 / — / 2           |
 
+## Notes
+
+**KDE "Remote control requested" dialog** — on first use, KDE Plasma will show a security prompt asking to approve input capture. This is the XDG Desktop Portal protecting against apps silently intercepting keystrokes. Click "Share" to allow it — it won't ask again for the rest of the session.
+
 ## Tools used
 
 - [sxhkd](https://github.com/baskerville/sxhkd) — hotkey daemon (via XWayland)
-- [xdotool](https://github.com/jordansissel/xdotool) — key injection into the XWayland window
-- [kdotool](https://github.com/jinliu/kdotool) — detect active window on KDE Wayland
+- [xdotool](https://github.com/jordansissel/xdotool) — key injection and active window detection (via XWayland)
+
+## License
+
+[MIT](LICENSE)
