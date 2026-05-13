@@ -3,24 +3,10 @@
 export MACROS_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 pkill -f "sxhkd.*sxhkdrc" 2>/dev/null
-pkill ydotoold 2>/dev/null
-
-cleanup() {
-    echo "Shutting down..."
-    kill $SXHKD_PID
-    kill $YDOTOOLD_PID
-}
-trap cleanup EXIT INT TERM
 
 echo "ED PIP Manager started from $MACROS_DIR"
 echo "Press Ctrl+C to stop."
 
-nix-shell -p sxhkd ydotool kdotool --run "
-    ydotoold &
-    YDOTOOLD_PID=\$!
-    sleep 0.5
-    sxhkd -c '$MACROS_DIR/sxhkdrc' &
-    SXHKD_PID=\$!
-    wait \$SXHKD_PID
-    kill \$YDOTOOLD_PID
+nix-shell -p sxhkd xdotool kdotool --run "
+    sxhkd -c '$MACROS_DIR/sxhkdrc'
 "

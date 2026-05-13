@@ -1,26 +1,35 @@
 # Elite Dangerous PIP management
+# @ = trigger on key release, so all modifiers are already physically released
+# when xdotool runs, avoiding stuck-modifier bugs
 
-F1
+# Dodge mode : 0.5SYS / 4ENG / 1.5WEP
+@F1
     $MACROS_DIR/pip.sh dodge
 
-ctrl + F1
+# Flee mode : 2SYS / 4ENG / 0WEP
+@ctrl + F1
     $MACROS_DIR/pip.sh flee
 
-F2
+# Combat mode : 0.5SYS / 1.5ENG / 4WEP
+@F2
     $MACROS_DIR/pip.sh combat
 
-ctrl + F2
+# Combat2 mode : -SYS / 2ENG / 4WEP
+@ctrl + F2
     $MACROS_DIR/pip.sh combat2
 
-F3
+# Pursuit mode : 2SYS / 1ENG / 3WEP
+@F3
     $MACROS_DIR/pip.sh pursuit
 
-ctrl + F3
+# Offense mode : 3SYS / -ENG / 3WEP
+@ctrl + F3
     $MACROS_DIR/pip.sh offense
 
-F4
+# Shields mode : 4SYS / 2ENG / -WEP
+@F4
     $MACROS_DIR/pip.sh shields
 
-ctrl + F4
+# Defense mode : 4SYS / -ENG / 2WEP
+@ctrl + F4
     $MACROS_DIR/pip.sh defense
-
