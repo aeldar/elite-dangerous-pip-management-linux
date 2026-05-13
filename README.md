@@ -1,12 +1,12 @@
-# Elite Dangerous PIP Management — Linux/Wayland
+# Elite Dangerous PIP Management — Linux (Wayland & Xorg)
 
-Keyboard macros for quick power distribution (PIP) presets in Elite Dangerous, with audio feedback. Linux/Wayland port of my own AutoHotkey script for Windows. PIP preset combinations and audio files originally by [CMDR Bracus Loremane](https://steamcommunity.com/app/359320/discussions/0/1652171126116562855/).
+Keyboard macros for quick power distribution (PIP) presets in Elite Dangerous, with audio feedback. Linux port of my own AutoHotkey script for Windows. PIP preset combinations and audio files originally by [CMDR Bracus Loremane](https://steamcommunity.com/app/359320/discussions/0/1652171126116562855/).
 
 ## Requirements
 
-- NixOS (uses `nix-shell` to pull dependencies)
-- Wayland compositor with XWayland support (tested on KDE Plasma)
-- Elite Dangerous running via Steam/Proton (XWayland)
+- [`nix`](https://nixos.org/download/) package manager (uses `nix-shell` to pull dependencies; [NixOS](https://nixos.org/) recommended)
+- Wayland (tested on KDE Plasma) or Xorg (untested, but should work)
+- Elite Dangerous running via Steam/Proton
 
 ## Usage
 
@@ -31,12 +31,12 @@ Press **Ctrl+C** to stop. On first run, `nix-shell` will download `sxhkd` and `x
 
 ## Notes
 
-**KDE "Remote control requested" dialog** — on first use, KDE Plasma will show a security prompt asking to approve input capture. This is the XDG Desktop Portal protecting against apps silently intercepting keystrokes. Click "Share" to allow it — it won't ask again for the rest of the session.
+**KDE Wayland — "Remote control requested" dialog** — on first use, KDE Plasma will show a security prompt asking to approve input capture. This is the XDG Desktop Portal protecting against apps silently intercepting keystrokes. Click "Share" to allow it — it won't ask again for the rest of the session. This prompt does not appear on Xorg.
 
 ## Tools used
 
-- [sxhkd](https://github.com/baskerville/sxhkd) — hotkey daemon (via XWayland)
-- [xdotool](https://github.com/jordansissel/xdotool) — key injection and active window detection (via XWayland)
+- [sxhkd](https://github.com/baskerville/sxhkd) — hotkey daemon
+- [xdotool](https://github.com/jordansissel/xdotool) — key injection and active window detection
 
 ## License
 
